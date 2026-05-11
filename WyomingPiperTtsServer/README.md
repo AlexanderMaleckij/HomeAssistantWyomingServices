@@ -1,4 +1,4 @@
-﻿## WyomingCrispAsrServer
+﻿## WyomingPiperTtsServer
 
 This project is a Home Assistant–compatible Wyoming protocol server that works with Piper (V1) models. Tested on Windows.
 
