@@ -50,6 +50,16 @@ The following Wyoming events are supported out of the box:
  - `audio-start`
  - `audio-chunk`
  - `audio-stop`
+ - `recognize`
+ - `intent`
+ - `not-recognized`
+ - `intents-start`
+ - `intents-stop`
+ - `handled`
+ - `not-handled`
+ - `handled-start`
+ - `handled-chunk`
+ - `handled-stop`
 
 ### Extensibility
 

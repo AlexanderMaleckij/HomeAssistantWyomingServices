@@ -32,6 +32,16 @@ public static class ServiceCollectionExtensions
             services.AddWyomingEventConverter<SynthesizeChunkEventConverter>(SynthesizeChunk);
             services.AddWyomingEventConverter<SynthesizeStopEventConverter>(SynthesizeStop);
             services.AddWyomingEventConverter<SynthesizeStoppedEventConverter>(SynthesizeStopped);
+            services.AddWyomingEventConverter<RecognizeEventConverter>(Recognize);
+            services.AddWyomingEventConverter<IntentEventConverter>(Intent);
+            services.AddWyomingEventConverter<NotRecognizedEventConverter>(NotRecognized);
+            services.AddWyomingEventConverter<IntentsStartEventConverter>(IntentsStart);
+            services.AddWyomingEventConverter<IntentsStopEventConverter>(IntentsStop);
+            services.AddWyomingEventConverter<HandledEventConverter>(Handled);
+            services.AddWyomingEventConverter<NotHandledEventConverter>(NotHandled);
+            services.AddWyomingEventConverter<HandledStartEventConverter>(HandledStart);
+            services.AddWyomingEventConverter<HandledChunkEventConverter>(HandledChunk);
+            services.AddWyomingEventConverter<HandledStopEventConverter>(HandledStop);
 
             // Server.
             services.AddSingleton<IWyomingServerFactory, WyomingServerFactory>();

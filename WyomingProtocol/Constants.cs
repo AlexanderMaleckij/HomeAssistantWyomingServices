@@ -16,5 +16,15 @@ internal class Constants
         public const string AudioStart = "audio-start";
         public const string AudioChunk = "audio-chunk";
         public const string AudioStop = "audio-stop";
+        public const string Recognize = "recognize";
+        public const string Intent = "intent";
+        public const string NotRecognized = "not-recognized";
+        public const string IntentsStart = "intents-start";
+        public const string IntentsStop = "intents-stop";
+        public const string Handled = "handled";
+        public const string NotHandled = "not-handled";
+        public const string HandledStart = "handled-start";
+        public const string HandledChunk = "handled-chunk";
+        public const string HandledStop = "handled-stop";
     }
 }
