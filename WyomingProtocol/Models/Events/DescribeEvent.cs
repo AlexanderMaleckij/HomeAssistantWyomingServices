@@ -1,7 +1,6 @@
-﻿namespace WyomingProtocol.Models.Events
+﻿namespace WyomingProtocol.Models.Events;
+
+public sealed class DescribeEvent : IWyomingEvent
 {
-    public sealed class DescribeEvent : IWyomingEvent
-    {
-        public string Type => Constants.EventTypes.Describe;
-    }
+    public string Type => Constants.EventTypes.Describe;
 }

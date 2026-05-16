@@ -4,7 +4,6 @@ using System.Buffers.Binary;
 using WyomingPiperTtsServer.Models.Options;
 using WyomingProtocol.Models;
 using WyomingProtocol.Models.Events;
-using WyomingProtocol.Models.Events.EventData;
 using WyomingProtocol.Server;
 
 namespace WyomingPiperTtsServer.Services;

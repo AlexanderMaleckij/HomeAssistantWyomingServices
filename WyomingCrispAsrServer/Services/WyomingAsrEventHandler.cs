@@ -3,7 +3,6 @@ using Microsoft.Extensions.Options;
 using WyomingCrispAsrServer.Models.Options.WyomingAsrServer;
 using WyomingProtocol.Models;
 using WyomingProtocol.Models.Events;
-using WyomingProtocol.Models.Events.EventData;
 using WyomingProtocol.Server;
 
 namespace WyomingCrispAsrServer.Services

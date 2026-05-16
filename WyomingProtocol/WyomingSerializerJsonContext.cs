@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 using WyomingProtocol.Models;
-using WyomingProtocol.Models.Events.EventData;
+using WyomingProtocol.Models.Events;
 
 namespace WyomingProtocol;
 

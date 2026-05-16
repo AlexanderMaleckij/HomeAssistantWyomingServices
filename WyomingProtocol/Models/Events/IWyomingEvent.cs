@@ -1,7 +1,6 @@
-﻿namespace WyomingProtocol.Models.Events
+﻿namespace WyomingProtocol.Models.Events;
+
+public interface IWyomingEvent
 {
-    public interface IWyomingEvent
-    {
-        abstract string Type { get; }
-    }
+    abstract string Type { get; }
 }
