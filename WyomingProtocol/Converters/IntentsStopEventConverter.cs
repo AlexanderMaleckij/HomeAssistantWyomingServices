@@ -1,4 +1,5 @@
-﻿using WyomingProtocol.Models.Events;
+﻿using WyomingProtocol.Converters.Shared;
+using WyomingProtocol.Models.Events;
 
 namespace WyomingProtocol.Converters;
 
@@ -11,6 +12,9 @@ internal sealed class IntentsStopEventConverter : EventConverterBase<IntentsStop
 
     public override RawWyomingEvent Convert(IntentsStopEvent @event)
     {
-        return new RawWyomingEvent { Type = Constants.EventTypes.IntentsStop };
+        return new RawWyomingEvent
+        {
+            Type = @event.Type
+        };
     }
 }

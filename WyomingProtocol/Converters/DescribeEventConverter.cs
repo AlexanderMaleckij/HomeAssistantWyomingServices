@@ -1,4 +1,5 @@
-﻿using WyomingProtocol.Models.Events;
+﻿using WyomingProtocol.Converters.Shared;
+using WyomingProtocol.Models.Events;
 
 namespace WyomingProtocol.Converters;
 
@@ -13,7 +14,7 @@ internal sealed class DescribeEventConverter : EventConverterBase<DescribeEvent>
     {
         return new RawWyomingEvent
         {
-            Type = Constants.EventTypes.Describe
+            Type = @event.Type
         };
     }
 }

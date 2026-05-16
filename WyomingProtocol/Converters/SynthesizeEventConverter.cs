@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using WyomingProtocol.Converters.Shared;
 using WyomingProtocol.Models.Events;
 
 namespace WyomingProtocol.Converters
@@ -17,7 +18,7 @@ namespace WyomingProtocol.Converters
         {
             return new RawWyomingEvent
             {
-                Type = Constants.EventTypes.Synthesize,
+                Type = @event.Type,
                 Data = JsonSerializer.SerializeToElement(@event.Data, WyomingSerializerJsonContext.Default.SynthesizeEventData)
             };
         }

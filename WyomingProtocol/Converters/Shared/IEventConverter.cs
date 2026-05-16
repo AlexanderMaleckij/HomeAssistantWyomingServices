@@ -1,6 +1,6 @@
 ﻿using WyomingProtocol.Models.Events;
 
-namespace WyomingProtocol.Converters;
+namespace WyomingProtocol.Converters.Shared;
 
 // Non-generic version is required for Native AOT compatible implementation.
 // Used in the EventConverterProvider and WyomingSerializer.

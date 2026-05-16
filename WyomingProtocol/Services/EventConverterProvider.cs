@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using WyomingProtocol.Converters;
+using WyomingProtocol.Converters.Shared;
 
 namespace WyomingProtocol.Services
 {

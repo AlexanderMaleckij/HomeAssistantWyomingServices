@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using WyomingProtocol.Converters.Shared;
 using WyomingProtocol.Models.Events;
 
 namespace WyomingProtocol.Converters;
@@ -17,7 +18,7 @@ internal sealed class TranscriptEventConverter : EventConverterBase<TranscriptEv
     {
         return new RawWyomingEvent
         {
-            Type = Constants.EventTypes.Transcript,
+            Type = @event.Type,
             Data = JsonSerializer.SerializeToElement(@event.Data, WyomingSerializerJsonContext.Default.TranscriptEventData)
         };
     }

@@ -1,4 +1,5 @@
-﻿using WyomingProtocol.Models.Events;
+﻿using WyomingProtocol.Converters.Shared;
+using WyomingProtocol.Models.Events;
 
 namespace WyomingProtocol.Converters;
 
@@ -13,7 +14,7 @@ internal sealed class SynthesizeStopEventConverter : EventConverterBase<Synthesi
     {
         return new RawWyomingEvent
         {
-            Type = Constants.EventTypes.SynthesizeStop
+            Type = @event.Type
         };
     }
 }

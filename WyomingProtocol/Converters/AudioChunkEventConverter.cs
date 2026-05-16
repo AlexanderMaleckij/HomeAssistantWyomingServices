@@ -1,4 +1,5 @@
 ﻿using System.Text.Json;
+using WyomingProtocol.Converters.Shared;
 using WyomingProtocol.Models.Events;
 
 namespace WyomingProtocol.Converters;
@@ -18,7 +19,7 @@ internal sealed class AudioChunkEventConverter : EventConverterBase<AudioChunkEv
     {
         return new RawWyomingEvent
         {
-            Type = Constants.EventTypes.AudioChunk,
+            Type = @event.Type,
             Data = JsonSerializer.SerializeToElement(@event.Data, WyomingSerializerJsonContext.Default.AudioChunkEventData),
             Payload = @event.Payload
         };

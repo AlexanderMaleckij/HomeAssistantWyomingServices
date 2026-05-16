@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 using WyomingProtocol.Converters;
+using WyomingProtocol.Converters.Shared;
 using WyomingProtocol.Server;
 using WyomingProtocol.Services;
 

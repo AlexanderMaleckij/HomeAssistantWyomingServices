@@ -1,4 +1,5 @@
-﻿using WyomingProtocol.Models.Events;
+﻿using WyomingProtocol.Converters.Shared;
+using WyomingProtocol.Models.Events;
 
 namespace WyomingProtocol.Converters;
 
@@ -11,6 +12,9 @@ internal sealed class HandledStopEventConverter : EventConverterBase<HandledStop
 
     public override RawWyomingEvent Convert(HandledStopEvent @event)
     {
-        return new RawWyomingEvent { Type = Constants.EventTypes.HandledStop };
+        return new RawWyomingEvent
+        {
+            Type = @event.Type
+        };
     }
 }

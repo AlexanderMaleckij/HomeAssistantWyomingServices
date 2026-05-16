@@ -1,4 +1,4 @@
-﻿using WyomingProtocol.Converters;
+﻿using WyomingProtocol.Converters.Shared;
 
 namespace WyomingProtocol.Services;
 
