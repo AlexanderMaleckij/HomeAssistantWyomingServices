@@ -8,45 +8,45 @@ namespace WyomingPiperTtsServer.Models.Options;
 internal sealed class PiperOptions
 {
     [Required]
-    public string EspeakDataDirectory { get; init; }
+    public string EspeakDataDirectory { get; set; }
 
     [Required]
-    public string EspeakDllPath { get; init; }
+    public string EspeakDllPath { get; set; }
 
     [Required]
     [ValidateEnumeratedItems]
-    public PiperModel[] Models { get; init; }
+    public PiperModel[] Models { get; set; }
 }
 
 internal sealed class PiperModel
 {
     [Required]
-    public string Id { get; init; }
+    public string Id { get; set; }
 
-    public string? Description { get; init; }
+    public string? Description { get; set; }
 
-    public string? Version { get; init; }
+    public string? Version { get; set; }
 
     [Required]
-    public string[] Languages { get; init; }
+    public string[] Languages { get; set; }
 
-    public string[]? Speakers { get; init; }
+    public string[]? Speakers { get; set; }
 
     [Required]
     [ValidateObjectMembers]
-    public PiperModelAttribution Attribution { get; init; }
+    public PiperModelAttribution Attribution { get; set; }
 
     [Required]
-    public string Path { get; init; }
+    public string Path { get; set; }
 }
 
 internal sealed class PiperModelAttribution
 {
     [Required]
-    public string Name { get; init; }
+    public string Name { get; set; }
 
     [Required]
-    public string Url { get; init; }
+    public string Url { get; set; }
 }
 
 [OptionsValidator]

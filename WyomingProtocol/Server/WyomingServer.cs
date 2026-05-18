@@ -39,6 +39,10 @@ internal sealed class WyomingServer : IWyomingServer
                     var client = await listener.AcceptTcpClientAsync(cancellationToken);
                     var id = Guid.NewGuid();
 
+                    // TODO: Track # of connections.
+                    // TODO: Make timeout configurable.
+                    client.ReceiveTimeout = 5000;
+
                     var clientTask = Task.Run(() => HandleClientAsync(client, cancellationToken), cancellationToken)
                         .ContinueWith(_ => activeTasks.TryRemove(id, out Task? _), TaskContinuationOptions.ExecuteSynchronously);
 

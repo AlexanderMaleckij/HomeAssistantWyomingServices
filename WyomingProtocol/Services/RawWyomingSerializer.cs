@@ -79,9 +79,11 @@ internal sealed class RawWyomingSerializer : IRawWyomingSerializer
         {
             cancellationToken.ThrowIfCancellationRequested();
 
-            var streamByte = stream.ReadByte();
+            var buffer = new byte[1];
 
-            if (streamByte == -1)
+            var bytesRead = await stream.ReadAsync(buffer, cancellationToken);
+
+            if (bytesRead == 0)
             {
                 if (memoryStream.Length == 0)
                 {
@@ -91,12 +93,14 @@ internal sealed class RawWyomingSerializer : IRawWyomingSerializer
                 throw new WyomingUnexpectedEndOfStreamException("Wyoming message header parsing error: end of the stream has been reached before a new line character was found.");
             }
 
+            var streamByte = buffer[0];
+
             if (streamByte == '\n')
             {
                 break;
             }
 
-            memoryStream.WriteByte((byte)streamByte);
+            memoryStream.WriteByte(streamByte);
         }
 
         memoryStream.Seek(0, SeekOrigin.Begin);

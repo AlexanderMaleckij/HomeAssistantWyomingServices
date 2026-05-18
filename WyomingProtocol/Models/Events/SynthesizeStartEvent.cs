@@ -6,7 +6,7 @@ public sealed class SynthesizeStartEvent : IWyomingEvent
 {
     public string Type => Constants.EventTypes.SynthesizeStart;
 
-    public required SynthesizeStartEventData Data { get; init; }
+    public SynthesizeStartEventData? Data { get; init; }
 }
 
 public sealed class SynthesizeStartEventData

@@ -48,7 +48,7 @@ internal sealed class WyomingTtsEventHandler : IWyomingEventHandler, IDisposable
                 }
             case SynthesizeStartEvent startEvent:
                 {
-                    _piper = _piperProvider.GetPiper(startEvent.Data.Voice?.Name);
+                    _piper = _piperProvider.GetPiper(startEvent.Data?.Voice?.Name);
                     return;
                 }
             case SynthesizeChunkEvent:
@@ -98,7 +98,7 @@ internal sealed class WyomingTtsEventHandler : IWyomingEventHandler, IDisposable
                 }
             case SynthesizeStopEvent:
                 {
-                    _logger.LogInformation("Received synthesize stop event.");
+                    context.CloseConnection();
 
                     return;
                 }

@@ -10,7 +10,7 @@ internal sealed class SynthesizeStartEventConverter : EventConverterBase<Synthes
     {
         return new SynthesizeStartEvent
         {
-            Data = @event.Data!.Value.Deserialize(WyomingSerializerJsonContext.Default.SynthesizeStartEventData)!
+            Data = @event.Data?.Deserialize(WyomingSerializerJsonContext.Default.SynthesizeStartEventData)
         };
     }
 
@@ -19,7 +19,9 @@ internal sealed class SynthesizeStartEventConverter : EventConverterBase<Synthes
         return new RawWyomingEvent
         {
             Type = @event.Type,
-            Data = JsonSerializer.SerializeToElement(@event.Data, WyomingSerializerJsonContext.Default.SynthesizeStartEventData)
+            Data = @event.Data is not null
+                ? JsonSerializer.SerializeToElement(@event.Data, WyomingSerializerJsonContext.Default.SynthesizeStartEventData)
+                : null
         };
     }
 }

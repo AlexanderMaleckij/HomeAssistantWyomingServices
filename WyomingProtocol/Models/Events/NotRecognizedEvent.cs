@@ -6,7 +6,7 @@ public sealed class NotRecognizedEvent : IWyomingEvent
 {
     public string Type => Constants.EventTypes.NotRecognized;
 
-    public required NotRecognizedEventData Data { get; init; }
+    public NotRecognizedEventData Data { get; init; } = new();
 }
 
 public sealed class NotRecognizedEventData

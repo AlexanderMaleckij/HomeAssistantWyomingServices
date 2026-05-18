@@ -36,14 +36,6 @@ internal sealed class WyomingClientHandler : IWyomingClientHandler
     {
         while (!cancellationToken.IsCancellationRequested)
         {
-            // TODO: Gracefully close connection?
-            // TODO: Track # of connections.
-
-            if (client.Available == 0)
-            {
-                return;
-            }
-
             var wyomingEvent = await _wyomingSerializer.DeserializeAsync(client.GetStream(), cancellationToken);
             var context = new WyomingRequestContext(client, _wyomingSerializer);
             await handler.HandleAsync(wyomingEvent, context, cancellationToken);
